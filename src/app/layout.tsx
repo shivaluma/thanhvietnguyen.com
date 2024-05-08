@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { RadialGradientBackground } from "@/components/radial-background";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -22,11 +23,11 @@ export default function RootLayout({
           inter.className
         }
       >
-        <div className="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute">
+        <RadialGradientBackground>
           <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
             {children}
           </div>
-        </div>
+        </RadialGradientBackground>
       </body>
     </html>
   );
