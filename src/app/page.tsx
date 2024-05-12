@@ -7,7 +7,7 @@ export default function Home() {
             <a href="/">Thanh Viet Nguyen</a>
           </h1>
           <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-            Frontend Engineer
+            Frontend / Full-stack Engineer
           </h2>
           <p className="mt-4 max-w-xs leading-normal">
             I build pixel-perfect, engaging, and accessible digital experiences.
