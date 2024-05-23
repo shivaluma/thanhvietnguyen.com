@@ -1,3 +1,5 @@
+import { TestDeeplink } from "@/components/test-deeplink";
+
 export default function Home() {
   return (
     <div className="lg:flex lg:justify-between lg:gap-4">
@@ -40,20 +42,13 @@ export default function Home() {
                     Projects
                   </span>
                 </a>
-
-                <a href="xyz.be.customer://ride/home">test deeplink1</a>
-                <button
-                  onClick={() => {
-                    window.location.href = "xyz.be.customer://ride/home";
-                  }}
-                >
-                  test deeplink2
-                </button>
               </li>
             </ul>
           </nav>
         </div>
       </header>
+
+      <TestDeeplink />
     </div>
   );
 }
