@@ -47,8 +47,6 @@ export default function Home() {
           </nav>
         </div>
       </header>
-
-      <TestDeeplink />
     </div>
   );
 }
