@@ -8,6 +8,39 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Thanh Viet Nguyen",
   description: "Frontend Engineer",
+  authors: [
+    {
+      url: "https://thanhvietnguyen.com",
+      name: "Thanh Viet Nguyen",
+    },
+  ],
+
+  keywords: [
+    "Frontend Engineer",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Next.js",
+    "Web Development",
+    "Frontend Development",
+    "Frontend",
+    "Developer",
+    "Engineer",
+    "Software Engineer",
+    "Software Developer",
+    "Thanh Viet Nguyen",
+    "Full Stack Developer",
+    "Full Stack Engineer",
+    "Full Stack Development",
+    "Full Stack",
+    "Full Stack Software Engineer",
+    "Full Stack Software Developer",
+    "FreeLancer",
+    "FreeLance",
+    "Senior Frontend Engineer",
+    "Senior Frontend Developer",
+  ],
+  themeColor: "#0f172a",
 };
 
 export default function RootLayout({

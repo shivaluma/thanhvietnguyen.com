@@ -1,19 +1,19 @@
-import { TestDeeplink } from "@/components/test-deeplink";
+import { siteConfigs } from "@/config";
 
 export default function Home() {
+  const { author, role, description } = siteConfigs;
+
   return (
     <div className="lg:flex lg:justify-between lg:gap-4">
       <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
         <div>
           <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
-            <a href="/">Thanh Viet Nguyen</a>
+            <a href="/">{author}</a>
           </h1>
           <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-            Frontend / Full-stack Engineer
+            {role}
           </h2>
-          <p className="mt-4 max-w-xs leading-normal">
-            I build pixel-perfect, engaging, and accessible digital experiences.
-          </p>
+          <p className="mt-4 max-w-xs leading-normal">{description}</p>
           <nav className="nav hidden lg:block" aria-label="In-page jump links">
             <ul className="mt-16 w-max">
               <li>
