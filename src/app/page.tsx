@@ -95,7 +95,7 @@ export default function Home() {
                 rel="noreferrer noopener"
                 aria-label="Klaviyo (opens in a new tab)"
               >
-                Be
+                be
               </a>
               . I thrive at the intersection of design and engineering, where I
               craft software that is both visually appealing and technically
