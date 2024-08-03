@@ -1,3 +1,5 @@
+import { SectionExperience } from "@/components/section-experience";
+import { SocialMediaList } from "@/components/social-medias";
 import { siteConfigs } from "@/config";
 
 export default function Home() {
@@ -46,6 +48,8 @@ export default function Home() {
             </ul>
           </nav>
         </div>
+
+        <SocialMediaList />
       </header>
 
       <main id="content" className="pt-12 lg:w-1/2 lg:py-24">
@@ -93,7 +97,7 @@ export default function Home() {
                 href="https://www.be.com.vn/"
                 target="_blank"
                 rel="noreferrer noopener"
-                aria-label="Klaviyo (opens in a new tab)"
+                aria-label="be (opens in a new tab)"
               >
                 be
               </a>
@@ -116,6 +120,8 @@ export default function Home() {
             </p>
           </div>
         </section>
+
+        <SectionExperience />
       </main>
     </div>
   );
