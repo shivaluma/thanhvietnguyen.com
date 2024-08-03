@@ -68,7 +68,7 @@ export function ExperienceItem({ data }: ExperienceItemProps) {
           <ul className="mt-2 flex flex-wrap" aria-label="Related links">
             {data.hrefs.map((href, idx) => {
               return (
-                <li className="mr-4">
+                <li className="mr-4" key={href.label}>
                   <a
                     className="relative mt-2 inline-flex items-center text-sm font-medium text-slate-300 hover:text-teal-300 focus-visible:text-teal-300"
                     href={href.url}
@@ -96,7 +96,7 @@ export function ExperienceItem({ data }: ExperienceItemProps) {
           <ul className="mt-2 flex flex-wrap" aria-label="Technologies used">
             {data.stacks.map((stack, idx) => {
               return (
-                <li key={stack} className="mr-1.5 mt-2">
+                <li key={idx} className="mr-1.5 mt-2">
                   <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">
                     {stack}
                   </div>
