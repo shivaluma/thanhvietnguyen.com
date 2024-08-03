@@ -1,5 +1,6 @@
 import { SectionExperience } from "@/components/section-experience";
 import { SocialMediaList } from "@/components/social-medias";
+import { ViewFullResume } from "@/components/view-full-resume";
 import { siteConfigs } from "@/config";
 
 export default function Home() {
@@ -122,6 +123,7 @@ export default function Home() {
         </section>
 
         <SectionExperience />
+        <ViewFullResume />
       </main>
     </div>
   );

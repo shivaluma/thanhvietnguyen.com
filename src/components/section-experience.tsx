@@ -1,3 +1,5 @@
+import { ExperienceList } from "@/components/experience";
+
 export function SectionExperience() {
   return (
     <section
@@ -10,6 +12,8 @@ export function SectionExperience() {
           Experience
         </h2>
       </div>
+
+      <ExperienceList />
     </section>
   );
 }
