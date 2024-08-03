@@ -57,7 +57,14 @@ export const siteConfigs: SiteConfig = {
         },
       ],
 
-      stacks: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
+      stacks: [
+        "React",
+        "TypeScript",
+        "TailwindCSS",
+        "Vite",
+        "Framer Motion",
+        "Zustand",
+      ],
     },
     {
       duration: "2020 - 2023",
@@ -74,7 +81,7 @@ export const siteConfigs: SiteConfig = {
         },
       ],
 
-      stacks: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
+      stacks: ["React", "TypeScript", "NodeJS", "Kafka", "AWS"],
     },
   ],
 } as const;
