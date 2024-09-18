@@ -26,7 +26,7 @@ interface SiteConfig {
 
 export const siteConfigs: SiteConfig = {
   author: "Thanh Viet Nguyen",
-  role: "Frontend Engineer",
+  role: "Senior Full Stack Software Engineer",
   description:
     "I build pixel-perfect, engaging, and accessible digital experiences.",
 
