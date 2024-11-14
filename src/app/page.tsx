@@ -2,6 +2,7 @@ import { SectionExperience } from "@/components/section-experience";
 import { SocialMediaList } from "@/components/social-medias";
 import { ViewFullResume } from "@/components/view-full-resume";
 import { siteConfigs } from "@/config";
+import Link from "next/link";
 
 export default function Home() {
   const { author, role, description } = siteConfigs;
@@ -11,7 +12,7 @@ export default function Home() {
       <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
         <div>
           <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
-            <a href="/">{author}</a>
+            <Link href="/">{author}</Link>
           </h1>
           <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
             {role}
@@ -69,7 +70,7 @@ export default function Home() {
               Back in 2013, I decided to try my hand at creating a simple web
               page for game listing on xtgem. Fast-forward to today, and I’ve
               had the privilege of building software for an{" "}
-              <a
+              <Link
                 className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
                 href="https://kobiton.com/"
                 target="_blank"
@@ -77,9 +78,9 @@ export default function Home() {
                 aria-label="kobiton (opens in a new tab)"
               >
                 mobile testing platform
-              </a>
+              </Link>
               , and a{" "}
-              <a
+              <Link
                 className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
                 href="https://be.com.vn"
                 target="_blank"
@@ -87,13 +88,13 @@ export default function Home() {
                 aria-label="ride hailing company (opens in a new tab)"
               >
                 ride hailing company
-              </a>
+              </Link>
               .
             </p>
             <p className="mb-4">
               My main focus these days is building accessible user interfaces
               for our customers at{" "}
-              <a
+              <Link
                 className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
                 href="https://www.be.com.vn/"
                 target="_blank"
@@ -101,13 +102,13 @@ export default function Home() {
                 aria-label="be (opens in a new tab)"
               >
                 be
-              </a>
+              </Link>
               . I thrive at the intersection of design and engineering, where I
               craft software that is both visually appealing and technically
               sound.
             </p>
             <p>
-              When I step away from the computer, you'll typically find me
+              When I step away from the computer, you&apos;ll typically find me
               coffeeing, reading, hanging out with my friends, or running around
               The Lands Between searching for{" "}
               <span className="group/korok inline-flex lg:font-medium lg:text-slate-200">
