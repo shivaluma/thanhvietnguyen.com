@@ -24,6 +24,7 @@ RUN pnpm run dev &
 RUN pnpm run build
 
 # Expose port 4321
+EXPOSE 4321
 EXPOSE 4322
 
 # Load environment variables
