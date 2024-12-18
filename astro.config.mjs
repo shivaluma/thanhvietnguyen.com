@@ -1,6 +1,5 @@
 // @ts-check
 import mdx from '@astrojs/mdx'
-import node from '@astrojs/node'
 import partytown from '@astrojs/partytown'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
@@ -12,8 +11,8 @@ import rehypeSlug from 'rehype-slug'
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  adapter: node({ mode: 'standalone' }),
+  output: 'static',
+  adapter: vercel(),
 
   site: 'https://thanhvietnguyen.com',
   markdown: {
@@ -53,7 +52,18 @@ export default defineConfig({
         context: 'server',
         access: 'secret'
       }),
-      PUBLIC_API_BASE_URL: envField.string({
+      PUBLIC_VERCEL_ENV: envField.string({
+        context: 'client',
+        access: 'public',
+        optional: true,
+        default: 'development'
+      }),
+      PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: envField.string({
+        context: 'client',
+        access: 'public',
+        optional: true
+      }),
+      PUBLIC_VERCEL_URL: envField.string({
         context: 'client',
         access: 'public',
         optional: true
