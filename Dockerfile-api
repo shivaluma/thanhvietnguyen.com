@@ -27,6 +27,8 @@ RUN pnpm run build
 EXPOSE 4321
 EXPOSE 4322
 
+ENV HOST=0.0.0.0
+
 # Load environment variables
 COPY .env .env
 RUN chmod +x /app/start.sh
