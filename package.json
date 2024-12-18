@@ -6,8 +6,6 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "build:node": "astro build --node",
-    "preview": "astro build --node && astro preview --node --port 3000",
     "astro": "astro",
     "lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\"",
     "partytown": "partytown copylib public/~partytown"

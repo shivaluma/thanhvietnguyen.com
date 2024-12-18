@@ -38,31 +38,6 @@ import BentoBadge from '../BentoBadge'
   </div>
 </div>
 
-<script>
-  document.addEventListener('astro:page-load', () => {
-    if (!document.getElementById('bento')) return
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const hiddenNotificationCards = entry.target.querySelectorAll(
-          '.hidden-notification-card'
-        )
-        if (entry.isIntersecting) {
-          hiddenNotificationCards.forEach((notificationCard) => {
-            notificationCard.classList.add('show-notification-card')
-          })
-        }
-      })
-    })
-
-    const featuredWorkCard = document.querySelector(
-      '.bookmarked-notification-card'
-    )
-
-    observer.observe(featuredWorkCard!)
-  })
-</script>
-
 <style>
   .hidden-notification-card {
     scale: 0;

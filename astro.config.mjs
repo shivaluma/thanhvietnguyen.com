@@ -12,12 +12,9 @@ import rehypeSlug from 'rehype-slug'
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
+  output: 'static',
   adapter: node({ mode: 'standalone' }),
-  server: {
-    host: '0.0.0.0',
-    port: 3000
-  },
+
   site: 'https://thanhvietnguyen.com',
   markdown: {
     shikiConfig: {
