@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Stop and remove existing API container if it exists
-echo "Stopping existing API container..."
-docker stop portfolio-api-container || true
-docker rm portfolio-api-container || true
-
 # Pull latest changes from repository
 echo "Pulling latest changes..."
 git pull origin main
@@ -12,6 +7,11 @@ git pull origin main
 # Build API Docker image
 echo "Building API Docker image..."
 docker build -t portfolio-api-image -f Dockerfile-api .
+
+# Stop and remove existing API container if it exists
+echo "Stopping existing API container..."
+docker stop portfolio-api-container || true
+docker rm portfolio-api-container || true
 
 # Run API container
 echo "Starting API container..."
