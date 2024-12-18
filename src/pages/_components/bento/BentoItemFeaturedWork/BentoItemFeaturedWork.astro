@@ -1,0 +1,77 @@
+---
+import { Bookmarks } from '@icons/Bookmarks'
+import { Suitcase } from '@icons/Suitcase'
+
+import Link from '@/components/Link'
+import NotificationCard from '@/components/NotificationCard'
+
+import BentoBadge from '../BentoBadge'
+---
+
+<div
+  class:list={[
+    'relative flex h-full flex-col gap-3 overflow-hidden rounded-[inherit] px-5 pb-8 pt-4',
+    'max-xs:pb-36 md:max-lg:gap-4'
+  ]}
+>
+  <div class='space-y-5 max-md:z-40'>
+    <BentoBadge
+      icon={Suitcase}
+      text='About me'
+      className={{ component: 'w-fit' }}
+    />
+
+    <div class='mt-5'>
+      <span class='leading-7 text-slate-400'
+        >Back in 2013, I decided to try my hand at creating a simple web page
+        for game listing on xtgem. Fast-forward to today, and I’ve had the
+        privilege of building software for an mobile testing platform, and a
+        ride hailing company. My main focus these days is building accessible
+        user interfaces for our customers at be. I thrive at the intersection of
+        design and engineering, where I craft software that is both visually
+        appealing and technically sound. When I step away from the computer,
+        you'll typically find me coffeeing, reading, hanging out with my
+        friends, or running around The Lands Between searching for Golden seeds
+        and Scadutree Fragments .
+      </span>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    if (!document.getElementById('bento')) return
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const hiddenNotificationCards = entry.target.querySelectorAll(
+          '.hidden-notification-card'
+        )
+        if (entry.isIntersecting) {
+          hiddenNotificationCards.forEach((notificationCard) => {
+            notificationCard.classList.add('show-notification-card')
+          })
+        }
+      })
+    })
+
+    const featuredWorkCard = document.querySelector(
+      '.bookmarked-notification-card'
+    )
+
+    observer.observe(featuredWorkCard!)
+  })
+</script>
+
+<style>
+  .hidden-notification-card {
+    scale: 0;
+    filter: blur(32px);
+    transition-all: all 0.3s;
+  }
+
+  .show-notification-card {
+    scale: 1 !important;
+    filter: blur(0);
+  }
+</style>

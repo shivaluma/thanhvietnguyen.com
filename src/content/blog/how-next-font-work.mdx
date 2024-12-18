@@ -1,0 +1,68 @@
+---
+title: How Next.js Font Works
+description: A deep dive into how Next.js Font works and how to replicate it in Astro.
+heroImage: https://images.unsplash.com/photo-1499980762202-04245017d5bf?q=80&w=2520&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+pubDate: 2024-12-18
+tags:
+  - react
+  - nextjs
+  - astro
+  - font
+  - css
+---
+
+## Introduction
+
+I've been working with Astro quite a bit lately, and the lack of something like `next/font` has been a persistent headache. My website was suffering from CLS (Cumulative Layout Shift) issues on the initial page load, especially before the fonts were cached.
+
+## Initial Thoughts and Failed Attempts
+
+Initially, I thought, "Oh, maybe `next/font` leverages some browser API or meta tag to solve this." I figured I could probably replicate similar logic in Astro.
+
+However, after experimenting with various approaches like `font-display: swap`, `fallback`, `optional`, preloading fonts, and even serving fonts locally, I still couldn't achieve the desired results.
+
+## The Solution: `astro-font`
+
+My problems were finally solved when I discovered `astro-font`. It seemed that `astro-font` and `next/font` share a similar mechanism. Curiosity got the better of me, so I dove into the source code to understand how it works. Here's a breakdown:
+
+## How `astro-font` (and `next/font`) Work
+
+1.  **Font Downloading and Caching:** The package downloads fonts from Google Fonts (or uses local fonts) and caches them.
+
+2.  **Preload in Header:** It adds a preload tag to the document header for the font.
+
+3.  **Font Metrics and Fallback Generation:** This is the core of the solution. It utilizes font metrics (such as `size-adjust`, `ascent-override`, `descent-override`, and `line-gap-override`) and the `fontkit` library to create a fallback font from the original font. This fallback font is derived from a local font that closely matches the dimensions of the original font. By default, it will use `Arial` for sans-serif fonts and `Times New Roman` for serif fonts. Here's an example:
+
+    ```css
+    body {
+      font-family: 'Poppins', 'fallback for Poppins',
+        'another fallback for Poppins';
+    }
+
+    @font-face {
+      font-family: 'fallback for Poppins';
+      src: local('Arial');
+      ascent-override: 105%;
+      descent-override: 35%;
+      line-gap-override: 10%;
+    }
+    ```
+
+4.  **Rendering with Fallback:** The browser initially renders the text using the fallback font. When the original font is fully loaded, the browser swaps the fallback font with the original. Because the fallback and original fonts have very similar dimensions, CLS is significantly minimized.
+
+## Further Reading on Font Metrics and Fallback Fonts
+
+To learn more about font metrics and the background of font fallbacks, check out [this excellent article from the Chrome team](https://developer.chrome.com/blog/font-fallbacks/).
+
+## References
+
+- [Implementation of `astro-font`](https://github.com/rishi-raj-jain/astro-font/blob/master/packages/astro-font/utils.ts#L363)
+- [Implementation of `next/font`](https://github.com/vercel/next.js/blob/canary/packages/font/src/local/get-fallback-metrics-from-font-file.ts#L73)
+- [Google Doc on how font fallback is done in next/font](https://docs.google.com/document/d/e/2PACX-1vRsazeNirATC7lIj2aErSHpK26hZ6dA9GsQ069GEbq5fyzXEhXbvByoftSfhG82aJXmrQ_sJCPBqcx_/pub)
+- [Font fallbacks - Chrome for Developers](https://developer.chrome.com/blog/font-fallbacks/)
+- [`nuxt-modules/fontaine`](https://github.com/nuxt-modules/fontaine)
+- [`unjs/fontaine`](https://github.com/unjs/fontaine)
+
+## Conclusion
+
+`astro-font` provides an elegant solution to font loading and CLS issues in Astro, mirroring the approach used by `next/font`. By leveraging font metrics and carefully crafting fallback fonts, it ensures a smooth user experience with minimal layout shifts. Understanding the inner workings of these tools can empower developers to optimize web performance and deliver visually stable web pages.
