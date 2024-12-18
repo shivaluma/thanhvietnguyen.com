@@ -18,10 +18,10 @@ RUN pnpm install
 COPY . .
 
 # Run dev in a detach mode
-RUN pnpm dev &
+RUN pnpm run dev &
 
 # Build the project in static mode
-RUN pnpm build
+RUN pnpm run build
 
 # Serve stage
 FROM nginx:alpine
