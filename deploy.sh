@@ -9,14 +9,6 @@ docker rm portfolio-container || true
 echo "Pulling latest changes..."
 git pull origin main
 
-# Install dependencies using pnpm
-echo "Installing dependencies..."
-pnpm install
-
-# Build the project
-echo "Building project..."
-pnpm build
-
 # Build Docker image
 echo "Building Docker image..."
 docker build -t portfolio-image .

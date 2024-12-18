@@ -1,5 +1,10 @@
 # Build stage
-FROM node:20-alpine as builder
+FROM node:20-alpine AS builder
+RUN apk update
+RUN apk add --no-cache libc6-compat
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 
 WORKDIR /app
 
@@ -7,13 +12,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN pnpm install
 
 # Copy source files
 COPY . .
 
 # Build the project in static mode
-RUN npm run build
+RUN pnpm build
 
 # Serve stage
 FROM nginx:alpine
