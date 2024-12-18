@@ -34,7 +34,8 @@ docker build -t portfolio-api-image -f Dockerfile-api .
 echo "Starting API container..."
 docker run -d \
   --name portfolio-api-container \
-  -p 6030:4322 \
+  -p 6032:4322 \
+  -p 6031:4321 \
   --restart unless-stopped \
   portfolio-api-image
 
