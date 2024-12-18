@@ -12,10 +12,9 @@ import rehypeSlug from 'rehype-slug'
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'server',
   adapter: node({ mode: 'standalone' }),
-
   site: 'https://thanhvietnguyen.com',
-
   markdown: {
     shikiConfig: {
       theme: 'poimandres'
