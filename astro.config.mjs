@@ -14,6 +14,10 @@ import rehypeSlug from 'rehype-slug'
 export default defineConfig({
   output: 'server',
   adapter: node({ mode: 'standalone' }),
+  server: {
+    host: '0.0.0.0',
+    port: 3000
+  },
   site: 'https://thanhvietnguyen.com',
   markdown: {
     shikiConfig: {
