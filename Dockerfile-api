@@ -30,4 +30,4 @@ EXPOSE 4322
 COPY .env .env
 RUN chmod +x /app/start.sh
 # Start API
-RUN /app/start.sh &
+CMD ["/app/start.sh"]
