@@ -11,18 +11,11 @@ export async function getStaticPaths() {
 
   return Promise.all(
     blogEntries.map(async ({ data, ...rest }) => {
-      const getLastUpdatedTime = client.api.github['last-updated-file']
-      const { latestCommitUrl, lastUpdatedTime } = await getLastUpdatedTime
-        .$get({ query: { path: `blog/${rest.id}.mdx` } })
-        .then((res) => res.json())
-
       const entry = {
         ...rest,
         data: {
           ...data,
-          ...(rest.body && { readingTime: readingTime(rest.body).minutes }),
-          updatedDate: new Date(lastUpdatedTime),
-          latestCommitUrl
+          ...(rest.body && { readingTime: readingTime(rest.body).minutes })
         }
       }
 

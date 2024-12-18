@@ -21,9 +21,7 @@ export async function getStaticPaths() {
       const entry = {
         ...rest,
         data: {
-          ...data,
-          updatedDate: new Date(lastUpdatedTime),
-          latestCommitUrl
+          ...data
         }
       }
 

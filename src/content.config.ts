@@ -12,10 +12,9 @@ export const blog = defineCollection({
       heroImage: z.string(),
       tags: z.array(z.string()).optional().default([]),
       pubDate: z.coerce.date(),
-      updatedDate: z.coerce.date().optional(),
+
       readingTime: z.number().optional(),
-      wordsCount: z.number().optional(),
-      latestCommitUrl: z.string().optional()
+      wordsCount: z.number().optional()
     })
 })
 
@@ -41,9 +40,7 @@ export const projects = defineCollection({
           .optional()
           .default([]),
         readingTime: z.number().optional(),
-        wordsCount: z.number().optional(),
-        updatedDate: z.coerce.date().optional(),
-        latestCommitUrl: z.string().optional()
+        wordsCount: z.number().optional()
       })
       .transform((data) => ({
         ...data,
