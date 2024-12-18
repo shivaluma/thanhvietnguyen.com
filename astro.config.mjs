@@ -16,6 +16,10 @@ export default defineConfig({
     mode: 'standalone'
   }),
   site: 'https://thanhvietnguyen.com',
+  server: {
+    port: 4321,
+    host: true
+  },
   markdown: {
     shikiConfig: {
       theme: 'poimandres'
