@@ -28,6 +28,6 @@ EXPOSE 4322
 
 # Load environment variables
 COPY .env .env
-
+RUN chmod +x /app/start.sh
 # Start API
 RUN /app/start.sh
