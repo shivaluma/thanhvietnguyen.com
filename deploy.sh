@@ -6,6 +6,8 @@ git pull origin main
 
 echo "Building the project..."
 pnpm install
+PUBLIC_VERCEL_ENV=production
+
 pnpm run build
 
 echo "Starting the project..."
