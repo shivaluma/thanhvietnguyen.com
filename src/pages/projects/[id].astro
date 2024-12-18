@@ -13,11 +13,6 @@ export async function getStaticPaths() {
 
   return Promise.all(
     projectEntries.map(async ({ data, ...rest }) => {
-      const getLastUpdatedTime = client.api.github['last-updated-file']
-      const { latestCommitUrl, lastUpdatedTime } = await getLastUpdatedTime
-        .$get({ query: { path: `projects/${rest.id}.mdx` } })
-        .then((res) => res.json())
-
       const entry = {
         ...rest,
         data: {

@@ -1,10 +1,10 @@
 // @ts-check
 import mdx from '@astrojs/mdx'
+import node from '@astrojs/node'
 import partytown from '@astrojs/partytown'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
-import vercel from '@astrojs/vercel'
 import { defineConfig, envField } from 'astro/config'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
@@ -12,8 +12,9 @@ import rehypeSlug from 'rehype-slug'
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  adapter: vercel(),
-
+  adapter: node({
+    mode: 'standalone'
+  }),
   site: 'https://thanhvietnguyen.com',
   markdown: {
     shikiConfig: {
