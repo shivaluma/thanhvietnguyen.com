@@ -5,6 +5,11 @@ echo "Stopping existing container..."
 docker stop portfolio-container || true
 docker rm portfolio-container || true
 
+# Stop and remove existing API container if it exists
+echo "Stopping existing API container..."
+docker stop portfolio-api-container || true
+docker rm portfolio-api-container || true
+
 # Pull latest changes from repository
 echo "Pulling latest changes..."
 git pull origin main
