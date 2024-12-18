@@ -52,6 +52,11 @@ export default defineConfig({
       MONKEYTYPE_API_KEY: envField.string({
         context: 'server',
         access: 'secret'
+      }),
+      PUBLIC_API_BASE_URL: envField.string({
+        context: 'client',
+        access: 'public',
+        optional: true
       })
     }
   },
