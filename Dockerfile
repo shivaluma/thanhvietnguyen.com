@@ -17,6 +17,9 @@ RUN pnpm install
 # Copy source files
 COPY . .
 
+# Run dev in a detach mode
+RUN pnpm dev &
+
 # Build the project in static mode
 RUN pnpm build
 
