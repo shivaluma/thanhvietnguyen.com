@@ -1,0 +1,70 @@
+
+---
+title: React Lifecycle in 4 Minutes
+description: A quick overview of the React component lifecycle.
+heroImage: https://images.unsplash.com/photo-1687603917313-ccae1a289a9d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmVhY3Rqc3xlbnwwfHwwfHx8MA%3D%3D
+pubDate: 2025-01-08
+tags:
+  - react
+---
+
+
+# React Lifecycle in 4 Minutes
+
+Mastering the React lifecycle is the first step to debugging like a pro.
+
+Here's an easy **4-minute guide**.
+
+## What Is the React Component Lifecycle?
+
+A React component is like a human being. Born, evolve, and die. React components follow a lifecycle: they're **born** (*mounting*), they **update**, and then they **die** (*unmounting*).
+
+* **Mounting**: React creates the component and adds it to the DOM.
+* **Updating**: The component changes in response to state changes.
+* **Unmounting**: React removes the component and cleans up resources.
+
+## Why Do You Need To Understand React Component Lifecycle?
+
+Understanding the React lifecycle helps you write better effects with `useEffect` and `useLayoutEffect`, avoid inefficiencies, prevent memory leaks, and optimize performance.
+
+## The Three Phases of the React Component Lifecycle
+
+![React Lifecycle](https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/asset/file/1d7cf80d-bdd5-4448-a735-27831b7cb52e/Screenshot_2024-12-30_at_15.17.53.png?t=1735568359)
+
+### 1. Mounting: When a Component Is First Rendered
+
+Mounting occurs when React adds a component to the screen. Triggered by `root.render(<MyComponent />)` or when React adds a component to the JSX tree.
+
+**Mounting process:** Render, Insert DOM Nodes, Set DOM Refs, Run `useLayoutEffect`, DOM Paint, Run `useEffect`.
+
+### 2. Updating: When a Component Re-Renders
+
+Updating happens when React re-renders a component to reflect changes. Triggered by state updates, context changes, parent re-rendering, etc.
+
+**Updating process:** Re-render, Reconciliation, Commit Changes, Unset DOM Refs, Cleanup `useLayoutEffect`, Set DOM Refs, Run `useLayoutEffect`, Paint the DOM, Cleanup `useEffect`, Run `useEffect`.
+
+### 3. Unmounting: When React Removes a Component
+
+Unmounting occurs when React removes a component from the DOM. Triggered when a component is no longer in the JSX tree, parent unmounts, or the component's key changes.
+
+**Unmounting process:** Run Cleanup Functions, Unset DOM Refs, Remove DOM Nodes.
+
+## Additional Resources To Go Further
+
+* [React Docs](https://react.dev/)
+    * [Render and Commit](https://react.dev/learn/render-and-commit)
+    * [Lifecycle of Reactive Effects](https://react.dev/learn/lifecycle-of-reactive-effects)
+* [Timeline of a React Component With Hooks](https://julesblom.com/writing/react-hook-component-timeline)
+* [Why React Re-Renders](https://www.joshwcomeau.com/react/why-react-re-renders/)
+* [A (Mostly) Complete Guide to React Rendering Behavior](https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/)
+
+## Summary
+
+Three phases: mounting, updating, and unmounting. unmounting.
+
+Start practicing these concepts with real-world examples:
+
+- Use useLayoutEffect for DOM measurements.
+- Always clean up effects when a component unmounts.
+
+You've got this 💪.
